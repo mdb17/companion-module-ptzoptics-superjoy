@@ -1,6 +1,6 @@
 {
 	"name": "ptzoptics-superjoy",
-	"version": "1.0.1-superjoy-fix",
+	"version": "1.0.2-superjoyfix",
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
