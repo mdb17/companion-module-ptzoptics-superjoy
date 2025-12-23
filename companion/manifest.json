@@ -3,7 +3,7 @@
 	"name": "ptzoptics-superjoy",
 	"shortname": "superjoy",
 	"description": "PTZ Optics SuperJoy Controller",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-ptzoptics-superjoy.git",
 	"bugs": "https://github.com/bitfocus/companion-module-ptzoptics-superjoy/issues",

@@ -61,9 +61,9 @@ class PTZSuperjoyInstance extends InstanceBase {
           this.log('info', 'Testing camera select')
           try {
             fetch(url)
-              .then(response => response.text())
+              .then(response => response.json())
               .then(text => {
-                if (text === 'OK') {
+                if (text && text.result == 0) {
                   this.log('debug', 'Result was OK')
                   this.updateStatus(InstanceStatus.Ok)
                   this.selectedCam = action.options.id
@@ -88,10 +88,10 @@ class PTZSuperjoyInstance extends InstanceBase {
           let url = `http://${this.config.controller}/cgi-bin/joyctrl.cgi?f=directpresets&action=recall&group=${this.config.group}&camid=${action.options.id}&preset=${action.options.preset}&presetspeed=${action.options.speed}`
           try {
             fetch(url)
-              .then(response => response.text())
+              .then(response => response.json())
               .then(text => {
-                this.log('info', text)
-                if (text === 'OK') {
+                this.log('info', JSON.stringify(text))
+                if (text && text.result == 0) {
                   this.log('debug', 'Result was OK')
                   this.updateStatus(InstanceStatus.Ok)
                   this.selectedCam = action.options.id
